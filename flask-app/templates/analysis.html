@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analyse — Travel Agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/analysis.css') }}">
+</head>
+<body>
+
+  <aside class="stub">
+    
+    <div class="stub-brand">
+      <div class="brand-afpa">
+			<img src="{{ url_for('static', filename='img/layout_set_logo.jpg') }}" width="30px">
+      </div>
+      <div>
+        Analyse agentique
+        <span>Rapport généré à partir des outils de réservation</span>
+        </div>
+    </div>
+
+    <div class="field">
+      <label for="topic">Sujet à analyser</label>
+      <textarea id="topic" placeholder="Ex. Revenus confirmés par destination sur les 3 derniers mois"></textarea>
+    </div>
+
+    <div class="presets">
+      <div class="presets-label">Suggestions</div>
+      <button class="preset-chip" type="button" data-preset="Revenus confirmés par destination sur les 3 derniers mois">Revenus par destination</button>
+      <button class="preset-chip" type="button" data-preset="Destinations sous-réservées malgré un bon rating">Destinations sous-réservées</button>
+      <button class="preset-chip" type="button" data-preset="Taux d'annulation par compagnie aérienne">Annulations par compagnie</button>
+    </div>
+
+    <button class="run-btn" id="run-btn" type="button">Lancer l'analyse</button>
+
+    <div class="status-block" id="status-block">
+      <div class="status-row"><span class="dot" id="dot-mcp"></span><span id="label-mcp">Vérification MCP…</span></div>
+      <div class="status-row"><span class="dot" id="dot-llm"></span><span id="label-llm">Vérification Groq…</span></div>
+    </div>
+  </aside>
+
+  <main class="manifest">
+    <div class="manifest-header">
+      <h1>Rapport d'analyse</h1>
+      <span class="manifest-date" id="manifest-date"></span>
+    </div>
+
+    <div id="result-area">
+      <div class="empty-state">
+        <p>Décrivez le sujet que vous voulez analyser dans le panneau de gauche. L'agent interroge les outils de réservation disponibles et rédige un rapport structuré à partir des données réelles.</p>
+        <p>Ex: <i>Fais-moi un check-up des revenus : total des revenus confirmés, les 3 villes de destination principales par revenus, et toute destination qui semble sous-réservée. Termines par 2 recommandations.</i></p>
+      </div>
+    </div>
+  </main>
+
+<script src="{{ url_for('static', filename='js/analysis.js') }}"></script>
+</body>
+</html>

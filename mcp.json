@@ -1,0 +1,17 @@
+{
+	"servers": {
+		"serveur-mcp-local": {
+			"type":"stdio",
+			"command": "python",
+			"args": ["project_root_path\\serveur_mcp_local\\server.py"],
+			"env": {
+				"MONGODB_URI": "mongodb://localhost:27017",
+				"MONGODB_DB": "traveldb",
+				"MCP_MAX_RESULTS": "20",
+				"ENABLE_WRITE_TOOLS": "false",
+				"ENABLE_MANAGEMENT_TOOLS": "false"
+			}
+		}
+	},
+	"inputs": []
+}

@@ -1,0 +1,7 @@
+cahier-des-charges-agent-voyage-version-2.docx
+.vscode/mcp.json
+.env
+serveur_mcp_local/__pycache__/
+serveur_mcp_local/tools/__pycache__/
+serveur_mcp_local/tests/__pycache__/
+flask-app/__pycache__/
